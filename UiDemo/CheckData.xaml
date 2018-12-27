@@ -66,10 +66,9 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CheckData" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="入力するデータが正しい（数値）かをチェックします。" DisplayName="CheckData" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Assign sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Boolean">[IsValid]</OutArgument>
@@ -80,46 +79,41 @@
     </Assign>
     <If Condition="[IsNumeric(AmountWithTax)]" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Else>
-        <Assign>
+        <Assign sap2010:WorkflowViewState.IdRef="Assign_2">
           <Assign.To>
             <OutArgument x:TypeArguments="x:Boolean">[IsValid]</OutArgument>
           </Assign.To>
           <Assign.Value>
             <InArgument x:TypeArguments="x:Boolean">False</InArgument>
           </Assign.Value>
-          <sap2010:WorkflowViewState.IdRef>Assign_2</sap2010:WorkflowViewState.IdRef>
         </Assign>
       </If.Else>
     </If>
-    <If Condition="[IsNumeric(AmoutWithOutTax)]">
+    <If Condition="[IsNumeric(AmoutWithOutTax)]" sap2010:WorkflowViewState.IdRef="If_2">
       <If.Else>
-        <Assign>
+        <Assign sap2010:WorkflowViewState.IdRef="Assign_3">
           <Assign.To>
             <OutArgument x:TypeArguments="x:Boolean">[IsValid]</OutArgument>
           </Assign.To>
           <Assign.Value>
             <InArgument x:TypeArguments="x:Boolean">False</InArgument>
           </Assign.Value>
-          <sap2010:WorkflowViewState.IdRef>Assign_3</sap2010:WorkflowViewState.IdRef>
         </Assign>
       </If.Else>
-      <sap2010:WorkflowViewState.IdRef>If_2</sap2010:WorkflowViewState.IdRef>
     </If>
-    <If Condition="[IsNumeric(Tax)]">
+    <If Condition="[IsNumeric(Tax)]" sap2010:WorkflowViewState.IdRef="If_3">
       <If.Else>
-        <Assign>
+        <Assign sap2010:WorkflowViewState.IdRef="Assign_4">
           <Assign.To>
             <OutArgument x:TypeArguments="x:Boolean">[IsValid]</OutArgument>
           </Assign.To>
           <Assign.Value>
             <InArgument x:TypeArguments="x:Boolean">False</InArgument>
           </Assign.Value>
-          <sap2010:WorkflowViewState.IdRef>Assign_4</sap2010:WorkflowViewState.IdRef>
         </Assign>
       </If.Else>
-      <sap2010:WorkflowViewState.IdRef>If_3</sap2010:WorkflowViewState.IdRef>
     </If>
-    <sads:DebugSymbol.Symbol>d0xDOlxVc2Vyc1xZb3NoaWhpa28gTWl5YWljaGlcRG9jdW1lbnRzXFVpUGF0aFxVaUxlc3Npb25cVWlEZW1vXENoZWNrRGF0YS54YW1sE0gDew4CAQFJBVAOAgEUUQVdCgIBDl4FawoCAQhsBXkKAgECTjFONQIBF0sySzsCARVRE1EvAgEPUwlbEgIBEF4TXjECAQlgCWgSAgEKbBNsJQIBA24JdhICAQRYNVg6AgETVTZVPwIBEWU1ZToCAQ1iNmI/AgELczVzOgIBB3A2cD8CAQU=</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d0VDOlxVc2Vyc1xZb3NoaWhpa28gTWl5YWljaGlcRG9jdW1lbnRzXFVpUGF0aFxVaUxlc3Npb25cQ2hlY2tEYXRhLnhhbWwTRwN1DgIBAUgFTw4CARRQBVsKAgEOXAVnCgIBCGgFcwoCAQJNMU01AgEXSjJKOwIBFVATUC8CAQ9SCVkSAgEQXBNcMQIBCV4JZRICAQpoE2glAgEDaglxEgIBBFc1VzoCARNUNlQ/AgERYzVjOgIBDWA2YD8CAQtvNW86AgEHbDZsPwIBBQ==</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
@@ -151,14 +145,15 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="486,934">
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="486,962">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="CheckData_1" sap:VirtualizedContainerService.HintSize="526,1014" />
+      <sap2010:ViewStateData Id="CheckData_1" sap:VirtualizedContainerService.HintSize="526,1082" />
     </sap2010:ViewStateManager>
   </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>

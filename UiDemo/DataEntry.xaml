@@ -68,7 +68,7 @@
       <AssemblyReference>UiPath.Mail</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="DataEntry" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="　交通費の詳細を入力します&#xD;&#xA;" DisplayName="DataEntry" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence DisplayName="Desktop" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window UiPathデモアプリ" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="522ae8ea4e396677310ac0d778056b18" Selector="&lt;wnd app='uipathデモアプリ.exe' cls='HwndWrapper*' title='UiPath ERPデモシステム' /&gt;">
         <ui:WindowScope.Body>
@@ -124,19 +124,20 @@
       <sap2010:ViewStateData Id="Sequence_3" sap:VirtualizedContainerService.HintSize="436,1022">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="222,176">
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="458,1190">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="DataEntry_1" sap:VirtualizedContainerService.HintSize="262,256" />
+      <sap2010:ViewStateData Id="DataEntry_1" sap:VirtualizedContainerService.HintSize="498,1270" />
     </sap2010:ViewStateManager>
   </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>

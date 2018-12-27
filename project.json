@@ -1,6 +1,6 @@
 {
   "name": "UiLession",
-  "description": "Blank Process",
+  "description": "UiPathデモアプリを使った、業務自動化の学習用サンプル",
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.UIAutomation.Activities": "[18.4.2]",
