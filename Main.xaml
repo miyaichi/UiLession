@@ -61,7 +61,7 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart sap2010:Annotation.AnnotationText="交通費の精算を行い、結果をメールで報告します。&#xD;&#xA;&#xD;&#xA;作業手順：&#xD;&#xA;1. Excelファイルにまとめた交通費の情報（Data\TravelCosts.xlsx）を読み込みます。&#xD;&#xA;2. 交通費を精算するアプリ（Uiデモアプリ）を起動します。&#xD;&#xA;3. 交通費の情報を1件ずつ登録し、表示される伝票Noを読み取り号をが表示されるので、&#xD;&#xA;　それを読み取り、記録します。&#xD;&#xA;4. すべての情報を登録したら、アプリを終了します。&#xD;&#xA;5. 交通費の情報と、伝票番号をExcelファイル（Data\TravelReport.xlsx）に書き出します。&#xD;&#xA;6. 書き出したExcelファイルをメールで報告します。" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart sap2010:Annotation.AnnotationText="交通費の精算を行い、結果をメールで報告します。&#xA;&#xA;作業手順：&#xA;1. Excelファイルにまとめた交通費の情報（Data\TravelCosts.xlsx）を読み込みます。&#xA;2. 交通費を精算するアプリ（Uiデモアプリ）を起動します。&#xA;3. 交通費の情報を1件ずつ登録し、表示される伝票Noを読み取り号をが表示されるので、&#xA;　それを読み取り、記録します。&#xA;4. すべての情報を登録したら、アプリを終了します。&#xA;5. 交通費の情報と、伝票番号をExcelファイル（Data\TravelReport.xlsx）に書き出します。&#xA;6. 書き出したExcelファイルをメールで報告します。" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="DataTable" />
       <Variable x:TypeArguments="x:Boolean" Name="IsValid" />
@@ -85,7 +85,7 @@
         </Sequence>
         <FlowStep.Next>
           <FlowStep x:Name="__ReferenceID1" sap2010:WorkflowViewState.IdRef="FlowStep_2">
-            <Sequence sap2010:Annotation.AnnotationText="2. 交通費を精算するアプリ（Uiデモアプリ）を起動します。&#xD;&#xA;3. 交通費の情報を1件ずつ登録し、表示される伝票Noを読み取り号をが表示されるので、&#xD;&#xA;　それを読み取り、記録します。&#xD;&#xA;4. すべての情報を登録したら、アプリを終了します。" DisplayName="データの登録と結果の取得" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence sap2010:Annotation.AnnotationText="2. 交通費を精算するアプリ（Uiデモアプリ）を起動します。&#xA;3. 交通費の情報を1件ずつ登録し、表示される伝票Noを読み取り号をが表示されるので、&#xA;　それを読み取り、記録します。&#xA;4. すべての情報を登録したら、アプリを終了します。" DisplayName="データの登録と結果の取得" sap2010:WorkflowViewState.IdRef="Sequence_2">
               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Open workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="UiDemo\Open.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <scg:Dictionary x:TypeArguments="x:String, Argument" />
@@ -101,9 +101,9 @@
                       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke CheckData workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="UiDemo\CheckData.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
                           <InArgument x:TypeArguments="x:String" x:Key="AmountWithTax">[Data("AmountWithTax").ToString]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="AmoutWithOutTax">[Data("AmoutWithOutTax").ToString]</InArgument>
                           <InArgument x:TypeArguments="x:String" x:Key="Tax">[Data("Tax").ToString]</InArgument>
                           <OutArgument x:TypeArguments="x:Boolean" x:Key="IsValid">[IsValid]</OutArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="AmountWithOutTax">[Data("AmountWithOutTax").ToString]</InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
                       <If Condition="[isValid]" sap2010:WorkflowViewState.IdRef="If_1">
@@ -112,8 +112,8 @@
                             <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke DataEntry workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="UiDemo\DataEntry.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
                                 <InArgument x:TypeArguments="x:Int32" x:Key="AmountWithTax">[CINT(Data("AmountWithTax"))]</InArgument>
-                                <InArgument x:TypeArguments="x:Int32" x:Key="AmoutWithOutTax">[CINT(Data("AmoutWithOutTax"))]</InArgument>
                                 <InArgument x:TypeArguments="x:Int32" x:Key="Tax">[CINT(Data("Tax"))]</InArgument>
+                                <InArgument x:TypeArguments="x:Int32" x:Key="AmountWithOutTax">[CINT(Data("AmountWithOutTax"))]</InArgument>
                               </ui:InvokeWorkflowFile.Arguments>
                             </ui:InvokeWorkflowFile>
                             <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke GetTransactionID workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="UiDemo\GetTransactionID.xaml">
@@ -146,7 +146,7 @@
             </Sequence>
             <FlowStep.Next>
               <FlowStep x:Name="__ReferenceID2" sap2010:WorkflowViewState.IdRef="FlowStep_1">
-                <Sequence sap2010:Annotation.AnnotationText="5. 交通費の情報と、伝票番号をExcelファイル（Data\TravelReport.xlsx）に書き出します。&#xD;&#xA;6. 書き出したExcelファイルをメールで報告します。" DisplayName="作業結果の報告" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence sap2010:Annotation.AnnotationText="5. 交通費の情報と、伝票番号をExcelファイル（Data\TravelReport.xlsx）に書き出します。&#xA;6. 書き出したExcelファイルをメールで報告します。" DisplayName="作業結果の報告" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke WriteData workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Excel\WriteData.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="x:String" x:Key="File">[TravelReportFile]</InArgument>
@@ -172,7 +172,7 @@
     <x:Reference>__ReferenceID0</x:Reference>
     <x:Reference>__ReferenceID1</x:Reference>
     <x:Reference>__ReferenceID2</x:Reference>
-    <sads:DebugSymbol.Symbol>d0BDOlxVc2Vyc1xtaXlhaWNoaS55b3NoaWhpa29cRG9jdW1lbnRzXFVpUGF0aFxVaUxlc3Npb25cTWFpbi54YW1sNUADsAEPAgEBRTRFSwIBBkY0RkwCAQVHNEdFAgEESDRIQwIBA0k0SUgCAQJNCVUUAgE7WA2SARgCARmVARGlARwCAQdOC1QjAgE8WQ9dJwIBOV4PjAEfAgEcjQEPkQEnAgEalgETnAErAgESnQETpAErAgEIUENQVAIBQVJNUlgCAT9RRFFKAgE+TrsBTtABAgE9WbsBWc0BAgE6XkBeTQIBN2QViQEgAgEdjQG8AY0BzwECARuYAUuYAV0CAReaAVSaAV8CARWZAUyZAVICARSWAcQBlgHaAQIBE6EBS6EBUQIBEKABTqABVwIBDqIBUaIBYwIBDJ8BTZ8BVQIBCp0BzAGdAekBAgEJZRdsLwIBMG0XiAEcAgEealRqXQIBNWdYZ3gCATRpTmlkAgEzaFpofAIBMmXIAWXfAQIBMW0lbTACAR9vG4YBJgIBIXAddjUCASt3HXs1AgEnfB2FASgCASJyXXJ6AgEvdFN0ZgIBLnNfc34CAS1wzgFw5QECASx5X3luAgEpd9UBd/MBAgEofR+EASgCASOCAUqCAVkCASV/S39iAgEk</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d0BDOlxVc2Vyc1xtaXlhaWNoaS55b3NoaWhpa29cRG9jdW1lbnRzXFVpUGF0aFxVaUxlc3Npb25cTWFpbi54YW1sNUADsAEPAgEBRTRFSwIBBkY0RkwCAQVHNEdFAgEESDRIQwIBA0k0SUgCAQJNCVUUAgE7WA2SARgCARmVARGlARwCAQdOC1QjAgE8WQ9dJwIBOV4PjAEfAgEcjQEPkQEnAgEalgETnAErAgESnQETpAErAgEIUENQVAIBQVJNUlgCAT9RRFFKAgE+TrsBTtABAgE9WbsBWc0BAgE6XkBeTQIBN2QViQEgAgEdjQG8AY0BzwECARuYAUuYAV0CAReaAVSaAV8CARWZAUyZAVICARSWAcQBlgHaAQIBE6EBS6EBUQIBEKABTqABVwIBDqIBUaIBYwIBDJ8BTZ8BVQIBCp0BzAGdAekBAgEJZRdsLwIBMG0XiAEcAgEeaVRpXQIBNWdYZ3gCATRoTmhkAgEzaltqfgIBMmXIAWXfAQIBMW0lbTACAR9vG4YBJgIBIXAddjUCASt3HXs1AgEnfB2FASgCASJyXXJ6AgEvc1NzZgIBLnRgdIABAgEtcM4BcOUBAgEseV95bgIBKXfVAXfzAQIBKH0fhAEoAgEjggFKggFZAgElf0t/YgIBJA==</sads:DebugSymbol.Symbol>
   </Flowchart>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
@@ -214,7 +214,7 @@
       </sap2010:ViewStateData>
       <sap2010:ViewStateData Id="ForEachRow_1" sap:VirtualizedContainerService.HintSize="516,1109" />
       <sap2010:ViewStateData Id="InvokeWorkflowFile_9" sap:VirtualizedContainerService.HintSize="516,87" />
-      <sap2010:ViewStateData Id="Sequence_2" sap:VirtualizedContainerService.HintSize="200,183">
+      <sap2010:ViewStateData Id="Sequence_2" sap:VirtualizedContainerService.HintSize="538,1559">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -270,7 +270,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Main_1" sap:VirtualizedContainerService.HintSize="654,878" />
+      <sap2010:ViewStateData Id="Main_1" sap:VirtualizedContainerService.HintSize="654,1006" />
     </sap2010:ViewStateManager>
   </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>

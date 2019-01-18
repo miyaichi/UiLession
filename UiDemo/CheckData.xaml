@@ -10,7 +10,7 @@
  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="AmountWithTax" Type="InArgument(x:String)" />
-    <x:Property Name="AmoutWithOutTax" Type="InArgument(x:String)" />
+    <x:Property Name="AmountWithOutTax" Type="InArgument(x:String)" />
     <x:Property Name="Tax" Type="InArgument(x:String)" />
     <x:Property Name="IsValid" Type="OutArgument(x:Boolean)" />
   </x:Members>
@@ -66,6 +66,7 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="入力するデータが正しい（数値）かをチェックします。" DisplayName="CheckData" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -89,7 +90,7 @@
         </Assign>
       </If.Else>
     </If>
-    <If Condition="[IsNumeric(AmoutWithOutTax)]" sap2010:WorkflowViewState.IdRef="If_2">
+    <If Condition="[IsNumeric(AmountWithOutTax)]" sap2010:WorkflowViewState.IdRef="If_2">
       <If.Else>
         <Assign sap2010:WorkflowViewState.IdRef="Assign_3">
           <Assign.To>
@@ -113,13 +114,13 @@
         </Assign>
       </If.Else>
     </If>
-    <sads:DebugSymbol.Symbol>d0VDOlxVc2Vyc1xZb3NoaWhpa28gTWl5YWljaGlcRG9jdW1lbnRzXFVpUGF0aFxVaUxlc3Npb25cQ2hlY2tEYXRhLnhhbWwTRwN1DgIBAUgFTw4CARRQBVsKAgEOXAVnCgIBCGgFcwoCAQJNMU01AgEXSjJKOwIBFVATUC8CAQ9SCVkSAgEQXBNcMQIBCV4JZRICAQpoE2glAgEDaglxEgIBBFc1VzoCARNUNlQ/AgERYzVjOgIBDWA2YD8CAQtvNW86AgEHbDZsPwIBBQ==</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d0xDOlxVc2Vyc1xtaXlhaWNoaS55b3NoaWhpa29cRG9jdW1lbnRzXFVpUGF0aFxVaUxlc3Npb25cVWlEZW1vXENoZWNrRGF0YS54YW1sE0gDdg4CAQFJBVAOAgEUUQVcCgIBDl0FaAoCAQhpBXQKAgECTjFONQIBF0sySzsCARVRE1EvAgEPUwlaEgIBEF0TXTICAQlfCWYSAgEKaRNpJQIBA2sJchICAQRYNVg6AgETVTZVPwIBEWQ1ZDoCAQ1hNmE/AgELcDVwOgIBB202bT8CAQU=</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
       <sap2010:ViewStateData Id="Assign_1" sap:VirtualizedContainerService.HintSize="464,60" />
       <sap2010:ViewStateData Id="Assign_2" sap:VirtualizedContainerService.HintSize="242,60" />
-      <sap2010:ViewStateData Id="If_1" sap:VirtualizedContainerService.HintSize="464,210">
+      <sap2010:ViewStateData Id="If_1" sap:VirtualizedContainerService.HintSize="464,208">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -128,7 +129,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
       <sap2010:ViewStateData Id="Assign_3" sap:VirtualizedContainerService.HintSize="242,60" />
-      <sap2010:ViewStateData Id="If_2" sap:VirtualizedContainerService.HintSize="464,210">
+      <sap2010:ViewStateData Id="If_2" sap:VirtualizedContainerService.HintSize="464,208">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -137,7 +138,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
       <sap2010:ViewStateData Id="Assign_4" sap:VirtualizedContainerService.HintSize="242,60" />
-      <sap2010:ViewStateData Id="If_3" sap:VirtualizedContainerService.HintSize="464,210">
+      <sap2010:ViewStateData Id="If_3" sap:VirtualizedContainerService.HintSize="464,208">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -145,7 +146,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="486,962">
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="486,955">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -153,7 +154,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="CheckData_1" sap:VirtualizedContainerService.HintSize="526,1082" />
+      <sap2010:ViewStateData Id="CheckData_1" sap:VirtualizedContainerService.HintSize="526,1035" />
     </sap2010:ViewStateManager>
   </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>

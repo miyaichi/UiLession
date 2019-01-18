@@ -1,4 +1,4 @@
-﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="DataEntry" this:DataEntry.AmountWithTax="1080" this:DataEntry.AmoutWithOutTax="1000" this:DataEntry.Tax="80"
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="DataEntry" this:DataEntry.AmountWithTax="1080" this:DataEntry.Tax="80" this:DataEntry.AmountWithOutTax="1000"
  xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
  xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
@@ -12,7 +12,7 @@
  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="AmountWithTax" Type="InArgument(x:Int32)" />
-    <x:Property Name="AmoutWithOutTax" Type="InArgument(x:Int32)" />
+    <x:Property Name="AmountWithOutTax" Type="InArgument(x:Int32)" />
     <x:Property Name="Tax" Type="InArgument(x:Int32)" />
   </x:Members>
   <mva:VisualBasic.Settings>
@@ -82,7 +82,7 @@
                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="7f6dc4133a28077700b06c1cf1eb0e9a" Selector="&lt;ctrl automationid='cashintb' /&gt;" WaitForReady="INTERACTIVE" />
                 </ui:TypeInto.Target>
               </ui:TypeInto>
-              <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 金額（税抜）" EmptyField="False" sap2010:WorkflowViewState.IdRef="TypeInto_2" SendWindowMessages="False" SimulateType="False" Text="[AmoutWithOutTax.ToString]">
+              <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 金額（税抜）" EmptyField="False" sap2010:WorkflowViewState.IdRef="TypeInto_2" SendWindowMessages="False" SimulateType="False" Text="[AmountWithOutTax.ToString]">
                 <ui:TypeInto.Target>
                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="298bc98b93607c1b7bd66d486b8d086b" Selector="&lt;ctrl automationid='onustb' /&gt;" WaitForReady="INTERACTIVE" />
                 </ui:TypeInto.Target>
@@ -105,7 +105,7 @@
         </ui:WindowScope.Body>
       </ui:WindowScope>
     </Sequence>
-    <sads:DebugSymbol.Symbol>d0xDOlxVc2Vyc1xtaXlhaWNoaS55b3NoaWhpa29cRG9jdW1lbnRzXFVpUGF0aFxVaUxlc3Npb25cVWlEZW1vXERhdGFFbnRyeS54YW1sFQFcAWEBBAGcAQGfAQEDAYIBAYcBAQJHA20OAgEBSAVrEAIBAkkHahgCAQNJjAJJ3QICARVPDWcYAgEEUA9UHQIBEVUPWR0CAQ1aD14dAgEJXw9mGgIBBVKiAVLKAQIBFFCgAlC6AgIBEleiAVfIAQIBEFWgAlW8AgIBDlyiAVzLAQIBDFq0AlrEAgIBCmSiAWTPAQIBCGE7YT4CAQdhLmEyAgEG</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d0xDOlxVc2Vyc1xtaXlhaWNoaS55b3NoaWhpa29cRG9jdW1lbnRzXFVpUGF0aFxVaUxlc3Npb25cVWlEZW1vXERhdGFFbnRyeS54YW1sFQFcAWEBBAF2AXkBAwGbAQGgAQECRwNtDgIBAUgFaxACAQJJB2oYAgEDSYwCSd0CAgEVTw1nGAIBBFAPVB0CARFVD1kdAgENWg9eHQIBCV8PZhoCAQVSogFSygECARRQoAJQugICARJXogFXyAECARBVoAJVvQICAQ5cogFcywECAQxatAJaxAICAQpkogFkzwECAQhhO2E+AgEHYS5hMgIBBg==</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
