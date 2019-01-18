@@ -68,7 +68,7 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="交通費の清算結果をGMailで送信します" DisplayName="SendReportByGMail" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="交通費の清算結果をGMailで送信します。" DisplayName="SendReportByGMail" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="smtp.gmail.com" Name="Server" />
       <Variable x:TypeArguments="x:Int32" Default="465" Name="Port" />
@@ -83,13 +83,13 @@
         </scg:List>
       </ui:SendMail.Files>
     </ui:SendMail>
-    <sads:DebugSymbol.Symbol>d1JDOlxVc2Vyc1xZb3NoaWhpa28gTWl5YWljaGlcRG9jdW1lbnRzXFVpUGF0aFxVaUxlc3Npb25cTWFpbFxTZW5kUmVwb3J0QnlHTWFpbC54YW1sD0cDVw4CAQFJNElEAgEESjNKOAIBA0s0S0UCAQJOBU6/AwIBFk8FVRMCAQVOsANOvAMCARdP9AJP/gICARRSMlI+AgEST4ABT4gBAgEQT+UCT/ACAgEOT7QBT70BAgEMT6oCT7ICAgEKT9ICT9wCAgEIT5gCT6QCAgEG</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d1JDOlxVc2Vyc1xtaXlhaWNoaS55b3NoaWhpa29cRG9jdW1lbnRzXFVpUGF0aFxVaUxlc3Npb25cTWFpbFxTZW5kUmVwb3J0QnlHTWFpbC54YW1sD0cDVw4CAQFJNElEAgEESjNKOAIBA0s0S0UCAQJOBU6/AwIBFk8FVRMCAQVOsANOvAMCARdP9AJP/gICARRSMlI+AgEST4ABT4gBAgEQT+UCT/ACAgEOT7QBT70BAgEMT6oCT7ICAgEKT9ICT9wCAgEIT5gCT6QCAgEG</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
       <sap2010:ViewStateData Id="GetPassword_1" sap:VirtualizedContainerService.HintSize="314,22" />
-      <sap2010:ViewStateData Id="SendMail_1" sap:VirtualizedContainerService.HintSize="314,147" />
-      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="336,361">
+      <sap2010:ViewStateData Id="SendMail_1" sap:VirtualizedContainerService.HintSize="314,145" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="336,358">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -97,7 +97,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="SendReportByGMail_1" sap:VirtualizedContainerService.HintSize="376,441" />
+      <sap2010:ViewStateData Id="SendReportByGMail_1" sap:VirtualizedContainerService.HintSize="376,438" />
     </sap2010:ViewStateManager>
   </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>

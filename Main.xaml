@@ -61,7 +61,7 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart sap2010:Annotation.AnnotationText="交通費の精算を行い、結果をメールで報告します。&#xD;&#xA;&#xD;&#xA;作業手順：&#xD;&#xA;1. Excelファイルにまとめた交通費の情報（Data\TravelCosts.xlsx）を読み込みます。&#xD;&#xA;2. 交通費を精算するアプリ（Uiデモアプリ）を起動します。&#xD;&#xA;3. 交通費の情報を1件ずつ登録し、表示される伝票Noを読み取り号をが表示されるので、&#xD;&#xA;　それを読み取り、記録します。&#xD;&#xA;4. すべての情報を登録したら、アプリを終了します。&#xD;&#xA;5. 交通費の情報と、伝票番号をExcelファイル（Data\TravelReport.xlsx）に書き出します。&#xD;&#xA;6. 書き出したExcelファイルをメールで報告します。" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="DataTable" />
       <Variable x:TypeArguments="x:Boolean" Name="IsValid" />
@@ -74,7 +74,7 @@
     </Flowchart.Variables>
     <Flowchart.StartNode>
       <FlowStep x:Name="__ReferenceID0" sap2010:WorkflowViewState.IdRef="FlowStep_3">
-        <Sequence DisplayName="データの読み込み" sap2010:WorkflowViewState.IdRef="Sequence_1">
+        <Sequence sap2010:Annotation.AnnotationText="1. Excelファイルにまとめた交通費の情報（Data\TravelCosts.xlsx）を読み込みます。" DisplayName="データの読み込み" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ReadData workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Excel\ReadData.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InArgument x:TypeArguments="x:String" x:Key="File">[TravelCostsFile]</InArgument>
@@ -85,12 +85,11 @@
         </Sequence>
         <FlowStep.Next>
           <FlowStep x:Name="__ReferenceID1" sap2010:WorkflowViewState.IdRef="FlowStep_2">
-            <Sequence DisplayName="データの登録と結果の取得" sap2010:WorkflowViewState.IdRef="Sequence_2">
-              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Open workflow" UnSafe="False" WorkflowFileName="UiDemo\Open.xaml">
+            <Sequence sap2010:Annotation.AnnotationText="2. 交通費を精算するアプリ（Uiデモアプリ）を起動します。&#xD;&#xA;3. 交通費の情報を1件ずつ登録し、表示される伝票Noを読み取り号をが表示されるので、&#xD;&#xA;　それを読み取り、記録します。&#xD;&#xA;4. すべての情報を登録したら、アプリを終了します。" DisplayName="データの登録と結果の取得" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Open workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="UiDemo\Open.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <scg:Dictionary x:TypeArguments="x:String, Argument" />
                 </ui:InvokeWorkflowFile.Arguments>
-                <sap2010:WorkflowViewState.IdRef>InvokeWorkflowFile_8</sap2010:WorkflowViewState.IdRef>
               </ui:InvokeWorkflowFile>
               <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[DataTable]" DisplayName="For Each Row" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
                 <ui:ForEachRow.Body>
@@ -139,16 +138,15 @@
                   </ActivityAction>
                 </ui:ForEachRow.Body>
               </ui:ForEachRow>
-              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Close workflow" UnSafe="False" WorkflowFileName="UiDemo\Close.xaml">
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Close workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="UiDemo\Close.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <scg:Dictionary x:TypeArguments="x:String, Argument" />
                 </ui:InvokeWorkflowFile.Arguments>
-                <sap2010:WorkflowViewState.IdRef>InvokeWorkflowFile_9</sap2010:WorkflowViewState.IdRef>
               </ui:InvokeWorkflowFile>
             </Sequence>
             <FlowStep.Next>
               <FlowStep x:Name="__ReferenceID2" sap2010:WorkflowViewState.IdRef="FlowStep_1">
-                <Sequence DisplayName="作業結果の報告" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence sap2010:Annotation.AnnotationText="5. 交通費の情報と、伝票番号をExcelファイル（Data\TravelReport.xlsx）に書き出します。&#xD;&#xA;6. 書き出したExcelファイルをメールで報告します。" DisplayName="作業結果の報告" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke WriteData workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Excel\WriteData.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="x:String" x:Key="File">[TravelReportFile]</InArgument>
@@ -174,15 +172,16 @@
     <x:Reference>__ReferenceID0</x:Reference>
     <x:Reference>__ReferenceID1</x:Reference>
     <x:Reference>__ReferenceID2</x:Reference>
-    <sads:DebugSymbol.Symbol>d0BDOlxVc2Vyc1xtaXlhaWNoaS55b3NoaWhpa29cRG9jdW1lbnRzXFVpUGF0aFxVaUxlc3Npb25cTWFpbi54YW1sNUADsgEPAgEBRTRFSwIBBkY0RkwCAQVHNEdFAgEESDRIQwIBA0k0SUgCAQJNCVUUAgE7WA2UARgCARmXARGnARwCAQdOC1QjAgE8WQ9eJwIBOV8PjQEfAgEcjgEPkwEnAgEamAETngErAgESnwETpgErAgEIUENQVAIBQVJNUlgCAT9RRFFKAgE+TrsBTtABAgE9WYQBWZYBAgE6X0BfTQIBN2UVigEgAgEdjgGFAY4BmAECARuaAUuaAV0CARecAVScAV8CARWbAUybAVICARSYAcQBmAHaAQIBE6MBS6MBUQIBEKIBTqIBVwIBDqQBUaQBYwIBDKEBTaEBVQIBCp8BzAGfAekBAgEJZhdtLwIBMG4XiQEcAgEea1RrXQIBNWhYaHgCATRqTmpkAgEzaVppfAIBMmbIAWbfAQIBMW4lbjACAR9wG4cBJgIBIXEddzUCASt4HXw1AgEnfR2GASgCASJzXXN6AgEvdVN1ZgIBLnRfdH4CAS1xzgFx5QECASx6X3puAgEpeNUBePMBAgEofh+FASgCASODAUqDAVkCASWAAUuAAWICASQ=</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d0BDOlxVc2Vyc1xtaXlhaWNoaS55b3NoaWhpa29cRG9jdW1lbnRzXFVpUGF0aFxVaUxlc3Npb25cTWFpbi54YW1sNUADsAEPAgEBRTRFSwIBBkY0RkwCAQVHNEdFAgEESDRIQwIBA0k0SUgCAQJNCVUUAgE7WA2SARgCARmVARGlARwCAQdOC1QjAgE8WQ9dJwIBOV4PjAEfAgEcjQEPkQEnAgEalgETnAErAgESnQETpAErAgEIUENQVAIBQVJNUlgCAT9RRFFKAgE+TrsBTtABAgE9WbsBWc0BAgE6XkBeTQIBN2QViQEgAgEdjQG8AY0BzwECARuYAUuYAV0CAReaAVSaAV8CARWZAUyZAVICARSWAcQBlgHaAQIBE6EBS6EBUQIBEKABTqABVwIBDqIBUaIBYwIBDJ8BTZ8BVQIBCp0BzAGdAekBAgEJZRdsLwIBMG0XiAEcAgEealRqXQIBNWdYZ3gCATRpTmlkAgEzaFpofAIBMmXIAWXfAQIBMW0lbTACAR9vG4YBJgIBIXAddjUCASt3HXs1AgEnfB2FASgCASJyXXJ6AgEvdFN0ZgIBLnNfc34CAS1wzgFw5QECASx5X3luAgEpd9UBd/MBAgEofR+EASgCASOCAUqCAVkCASV/S39iAgEk</sads:DebugSymbol.Symbol>
   </Flowchart>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
       <sap2010:ViewStateData Id="InvokeWorkflowFile_1" sap:VirtualizedContainerService.HintSize="314,87" />
-      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="200,51">
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="200,123">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
@@ -215,36 +214,38 @@
       </sap2010:ViewStateData>
       <sap2010:ViewStateData Id="ForEachRow_1" sap:VirtualizedContainerService.HintSize="516,1109" />
       <sap2010:ViewStateData Id="InvokeWorkflowFile_9" sap:VirtualizedContainerService.HintSize="516,87" />
-      <sap2010:ViewStateData Id="Sequence_2" sap:VirtualizedContainerService.HintSize="538,1487">
+      <sap2010:ViewStateData Id="Sequence_2" sap:VirtualizedContainerService.HintSize="200,183">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
       <sap2010:ViewStateData Id="InvokeWorkflowFile_5" sap:VirtualizedContainerService.HintSize="314,87" />
       <sap2010:ViewStateData Id="InvokeWorkflowFile_7" sap:VirtualizedContainerService.HintSize="314,87" />
-      <sap2010:ViewStateData Id="Sequence_3" sap:VirtualizedContainerService.HintSize="200,51">
+      <sap2010:ViewStateData Id="Sequence_3" sap:VirtualizedContainerService.HintSize="336,395">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
       <sap2010:ViewStateData Id="FlowStep_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <av:Point x:Key="ShapeLocation">200,331.5</av:Point>
-            <av:Size x:Key="ShapeSize">200,51</av:Size>
+            <av:Point x:Key="ShapeLocation">200,533.5</av:Point>
+            <av:Size x:Key="ShapeSize">200,153</av:Size>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
       <sap2010:ViewStateData Id="FlowStep_2">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <av:Point x:Key="ShapeLocation">200,229.5</av:Point>
-            <av:Size x:Key="ShapeSize">200,51</av:Size>
-            <av:PointCollection x:Key="ConnectorLocation">300,281.5 300,331.5</av:PointCollection>
+            <av:Point x:Key="ShapeLocation">200,300.5</av:Point>
+            <av:Size x:Key="ShapeSize">200,183</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">300,483.5 300,533.5</av:PointCollection>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
@@ -252,22 +253,24 @@
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <av:Point x:Key="ShapeLocation">200,127.5</av:Point>
-            <av:Size x:Key="ShapeSize">200,51</av:Size>
-            <av:PointCollection x:Key="ConnectorLocation">300,179.5 300,229.5</av:PointCollection>
+            <av:Size x:Key="ShapeSize">200,123</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">300,250.5 300,300.5</av:PointCollection>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Flowchart_1" sap:VirtualizedContainerService.HintSize="614,636">
+      <sap2010:ViewStateData Id="Flowchart_1" sap:VirtualizedContainerService.HintSize="614,886">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
             <av:Size x:Key="ShapeSize">60,75</av:Size>
             <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,127.5</av:PointCollection>
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            <x:Double x:Key="Height">687.5</x:Double>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Main_1" sap:VirtualizedContainerService.HintSize="654,716" />
+      <sap2010:ViewStateData Id="Main_1" sap:VirtualizedContainerService.HintSize="654,878" />
     </sap2010:ViewStateManager>
   </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>

@@ -68,7 +68,7 @@
       <AssemblyReference>UiPath.Mail</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="　交通費の詳細を入力します&#xD;&#xA;" DisplayName="DataEntry" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="　交通費の詳細を入力します。&#xA;" DisplayName="DataEntry" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence DisplayName="Desktop" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window UiPathデモアプリ" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="522ae8ea4e396677310ac0d778056b18" Selector="&lt;wnd app='uipathデモアプリ.exe' cls='HwndWrapper*' title='UiPath ERPデモシステム' /&gt;">
         <ui:WindowScope.Body>
@@ -105,7 +105,7 @@
         </ui:WindowScope.Body>
       </ui:WindowScope>
     </Sequence>
-    <sads:DebugSymbol.Symbol>d0xDOlxVc2Vyc1xZb3NoaWhpa28gTWl5YWljaGlcRG9jdW1lbnRzXFVpUGF0aFxVaUxlc3Npb25cVWlEZW1vXERhdGFFbnRyeS54YW1sFQFcAWEBBAGcAQGfAQEDAYIBAYcBAQJHA20OAgEBSAVrEAIBAkkHahgCAQNJjAJJ3QICARVPDWcYAgEEUA9UHQIBEVUPWR0CAQ1aD14dAgEJXw9mGgIBBVKiAVLKAQIBFFCgAlC6AgIBEleiAVfIAQIBEFWgAlW8AgIBDlyiAVzLAQIBDFq0AlrEAgIBCmSiAWTPAQIBCGE7YT4CAQdhLmEyAgEG</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d0xDOlxVc2Vyc1xtaXlhaWNoaS55b3NoaWhpa29cRG9jdW1lbnRzXFVpUGF0aFxVaUxlc3Npb25cVWlEZW1vXERhdGFFbnRyeS54YW1sFQFcAWEBBAGcAQGfAQEDAYIBAYcBAQJHA20OAgEBSAVrEAIBAkkHahgCAQNJjAJJ3QICARVPDWcYAgEEUA9UHQIBEVUPWR0CAQ1aD14dAgEJXw9mGgIBBVKiAVLKAQIBFFCgAlC6AgIBEleiAVfIAQIBEFWgAlW8AgIBDlyiAVzLAQIBDFq0AlrEAgIBCmSiAWTPAQIBCGE7YT4CAQdhLmEyAgEG</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
@@ -129,7 +129,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="458,1190">
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="458,1188">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -137,7 +137,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="DataEntry_1" sap:VirtualizedContainerService.HintSize="498,1270" />
+      <sap2010:ViewStateData Id="DataEntry_1" sap:VirtualizedContainerService.HintSize="498,1268" />
     </sap2010:ViewStateManager>
   </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>

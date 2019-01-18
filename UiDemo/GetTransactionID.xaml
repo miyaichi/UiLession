@@ -61,7 +61,7 @@
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="伝票Noを読み取ります" DisplayName="GetTransactionID" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="伝票Noを読み取ります。" DisplayName="GetTransactionID" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window UiPathデモアプリ" sap2010:WorkflowViewState.IdRef="WindowScope_2" InformativeScreenshot="522ae8ea4e396677310ac0d778056b18" Selector="&lt;wnd app='uipathデモアプリ.exe' cls='HwndWrapper*' title='UiPath ERPデモシステム' /&gt;">
       <ui:WindowScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
@@ -81,7 +81,7 @@
         </ActivityAction>
       </ui:WindowScope.Body>
     </ui:WindowScope>
-    <sads:DebugSymbol.Symbol>d1NDOlxVc2Vyc1xZb3NoaWhpa28gTWl5YWljaGlcRG9jdW1lbnRzXFVpUGF0aFxVaUxlc3Npb25cVWlEZW1vXEdldFRyYW5zYWN0aW9uSUQueGFtbAdAA1UOAgEBQQVTFgIBAkGKAkHbAgIBCEcLUBYCAQNIDU8bAgEETTlNSAIBBUqgAUq+AgIBBw==</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d1NDOlxVc2Vyc1xtaXlhaWNoaS55b3NoaWhpa29cRG9jdW1lbnRzXFVpUGF0aFxVaUxlc3Npb25cVWlEZW1vXEdldFRyYW5zYWN0aW9uSUQueGFtbAdAA1UOAgEBQQVTFgIBAkGKAkHbAgIBCEcLUBYCAQNIDU8bAgEETTlNSAIBBUqgAUq+AgIBBw==</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
@@ -94,7 +94,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
       <sap2010:ViewStateData Id="WindowScope_2" sap:VirtualizedContainerService.HintSize="414,376" />
-      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="436,528">
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="436,527">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -102,7 +102,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="GetTransactionID_1" sap:VirtualizedContainerService.HintSize="476,608" />
+      <sap2010:ViewStateData Id="GetTransactionID_1" sap:VirtualizedContainerService.HintSize="476,607" />
     </sap2010:ViewStateManager>
   </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>
